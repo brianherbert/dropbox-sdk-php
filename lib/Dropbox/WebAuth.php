@@ -272,7 +272,7 @@ class WebAuth extends WebAuthBase
 
         // If everything went ok, make the network call to get an access token.
 
-        list($accessToken, $userId) = $this->_finish($code, $this->redirectUri);
-        return array($accessToken, $userId, $urlState);
+        list($accessToken, $userId, $teamId) = $this->_finish($code, $this->redirectUri);
+        return array($accessToken, $userId, $urlState, $teamId);
     }
 }
