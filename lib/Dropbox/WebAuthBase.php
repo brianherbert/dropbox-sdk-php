@@ -62,7 +62,10 @@ class WebAuthBase extends AuthBase
                                             .Util::q($tokenType));
         }
         
-        $teamId = $parts['team_id'];
+        $teamId = NULL;
+        if (array_key_exists('team_id', $parts) && is_string($parts['team_id'])) {
+            $teamId = $parts['team_id'];
+        }
 
         return array($accessToken, $userId, $teamId);
     }
