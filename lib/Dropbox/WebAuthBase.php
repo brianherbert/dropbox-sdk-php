@@ -61,7 +61,9 @@ class WebAuthBase extends AuthBase
             throw new Exception_BadResponse("Unknown \"token_type\"; expecting \"Bearer\", got  "
                                             .Util::q($tokenType));
         }
+        
+        $teamId = $parts['team_id'];
 
-        return array($accessToken, $userId);
+        return array($accessToken, $userId, $teamId);
     }
 }
